@@ -36,6 +36,7 @@ import {
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
+import { Practices } from "./Practices";
 import {
   chapters,
   courseOutline,
@@ -327,7 +328,7 @@ function calloutVariantFor(children: ReactNode): CalloutVariant {
   return CALLOUT_VARIANTS[normalizeLabel(label)] ?? DEFAULT_CALLOUT;
 }
 
-function LessonMarkdown({ markdown }: { markdown: string }) {
+export function LessonMarkdown({ markdown }: { markdown: string }) {
   return (
     <Markdown
       remarkPlugins={[remarkGfm]}
@@ -531,6 +532,10 @@ function ChapterRail({
         onClick={onClose}
       />
       <aside className={`chapter-rail ${isOpen ? "is-open" : ""}`}>
+        <nav className="course-navigation" aria-label="Áreas da apostila">
+          <a href={pathFor(chapter.number, sectionId)} aria-current="page">Capítulos</a>
+          <a href="#/praticas">Práticas</a>
+        </nav>
         <div className="rail-heading">
           <div className="eyebrow-row">
             <span>
@@ -822,7 +827,7 @@ function ReflectionCard({
   );
 }
 
-export function App() {
+function ChaptersApp() {
   const { route, navigate } = useCourseRoute();
   const [progress, setProgress] = useState<CourseProgress>(() =>
     readProgress(),
@@ -1075,4 +1080,16 @@ export function App() {
       />
     </div>
   );
+}
+
+export function App() {
+  const [hash, setHash] = useState(() => window.location.hash);
+  useEffect(() => {
+    const sync = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", sync);
+    return () => window.removeEventListener("hashchange", sync);
+  }, []);
+  return /^#\/praticas(?:\/|$)/.test(hash)
+    ? <Practices hash={hash} renderMarkdown={(markdown) => <LessonMarkdown markdown={markdown} />} />
+    : <ChaptersApp />;
 }

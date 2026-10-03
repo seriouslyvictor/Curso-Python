@@ -7,3 +7,4 @@ design-qa-comparison-*.png
 
 # Local packaging artifacts
 *.tar.gz
+.npm-cache/

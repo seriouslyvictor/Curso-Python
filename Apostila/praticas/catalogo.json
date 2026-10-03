@@ -1,0 +1,265 @@
+{
+  "phases": [
+    {
+      "id": "acesso",
+      "label": "Acesso Direto",
+      "desc": "Acessar valores em dicionários simples e aninhados"
+    },
+    {
+      "id": "loops",
+      "label": "Loops + Listas",
+      "desc": "Iterar sobre listas de dicionários"
+    },
+    {
+      "id": "filtros",
+      "label": "Filtros + Condicionais",
+      "desc": "Combinar loops com if/else para filtrar dados"
+    },
+    {
+      "id": "transformacao",
+      "label": "Transformação",
+      "desc": "Criar novos dicts e listas a partir de dados existentes"
+    },
+    {
+      "id": "funcoes",
+      "label": "Funções + API",
+      "desc": "Encapsular lógica em funções reutilizáveis"
+    },
+    {
+      "id": "boss",
+      "label": "Boss Final",
+      "desc": "Desafios completos que combinam tudo"
+    }
+  ],
+  "challenges": [
+    {
+      "id": "acesso-1",
+      "fase": "acesso",
+      "numero": 1,
+      "titulo": "Ficha do Pokémon",
+      "tema": "PokéAPI",
+      "conceitos": [
+        "acesso a chaves",
+        "lista dentro de dict",
+        "acesso aninhado"
+      ]
+    },
+    {
+      "id": "acesso-2",
+      "fase": "acesso",
+      "numero": 2,
+      "titulo": "Previsão do Tempo",
+      "tema": "OpenWeather",
+      "conceitos": [
+        "acesso aninhado",
+        "f-string",
+        "lista com um item"
+      ]
+    },
+    {
+      "id": "acesso-3",
+      "fase": "acesso",
+      "numero": 3,
+      "titulo": "Perfil do Jogador",
+      "tema": "API de Futebol",
+      "conceitos": [
+        "acesso profundo",
+        "operações matemáticas",
+        "f-string com formatação"
+      ]
+    },
+    {
+      "id": "acesso-4",
+      "fase": "acesso",
+      "numero": 4,
+      "titulo": "Dados do Usuário",
+      "tema": "API de Rede Social",
+      "conceitos": [
+        "booleanos",
+        "round / formatação",
+        "acesso aninhado"
+      ]
+    },
+    {
+      "id": "loops-1",
+      "fase": "loops",
+      "numero": 1,
+      "titulo": "Playlist Brasileira",
+      "tema": "API de Músicas",
+      "conceitos": [
+        "for loop",
+        "acumulador",
+        "len()",
+        "f-string"
+      ]
+    },
+    {
+      "id": "loops-2",
+      "fase": "loops",
+      "numero": 2,
+      "titulo": "Tabela do Brasileirão",
+      "tema": "API de Futebol",
+      "conceitos": [
+        "for loop",
+        "operações dentro do loop",
+        "comparação / máximo"
+      ]
+    },
+    {
+      "id": "loops-3",
+      "fase": "loops",
+      "numero": 3,
+      "titulo": "Inventário RPG",
+      "tema": "API de Game",
+      "conceitos": [
+        "for loop",
+        "múltiplos acumuladores",
+        "contador",
+        ".append()"
+      ]
+    },
+    {
+      "id": "loops-4",
+      "fase": "loops",
+      "numero": 4,
+      "titulo": "Catálogo de Produtos",
+      "tema": "API de E-commerce",
+      "conceitos": [
+        "for loop",
+        "multiplicação no loop",
+        "min/max manual",
+        "estoque zero"
+      ]
+    },
+    {
+      "id": "filtros-1",
+      "fase": "filtros",
+      "numero": 1,
+      "titulo": "Filtro de Pokémon",
+      "tema": "PokéAPI",
+      "conceitos": [
+        "for + if",
+        "booleano como filtro",
+        "múltiplas condições",
+        "separar listas"
+      ]
+    },
+    {
+      "id": "filtros-2",
+      "fase": "filtros",
+      "numero": 2,
+      "titulo": "Relatório de Vendas",
+      "tema": "API de Dashboard",
+      "conceitos": [
+        "for + if/else",
+        "acumulador por categoria",
+        "porcentagem",
+        "emoji condicional"
+      ]
+    },
+    {
+      "id": "filtros-3",
+      "fase": "filtros",
+      "numero": 3,
+      "titulo": "Feed de Notícias",
+      "tema": "API de Notícias",
+      "conceitos": [
+        "sorted() com lambda",
+        "engajamento calculado",
+        "contagem com dict",
+        "top N"
+      ]
+    },
+    {
+      "id": "transformacao-1",
+      "fase": "transformacao",
+      "numero": 1,
+      "titulo": "Transformar Resposta da API",
+      "tema": "OpenWeather",
+      "conceitos": [
+        "criar dict novo",
+        "split()",
+        "min/max",
+        "contagem de frequência"
+      ]
+    },
+    {
+      "id": "transformacao-2",
+      "fase": "transformacao",
+      "numero": 2,
+      "titulo": "Cardápio do iFood",
+      "tema": "API de Delivery",
+      "conceitos": [
+        "agrupar em dict",
+        ".setdefault()",
+        "busca em lista",
+        "min() com lambda"
+      ]
+    },
+    {
+      "id": "transformacao-3",
+      "fase": "transformacao",
+      "numero": 3,
+      "titulo": "Histórico de Partidas",
+      "tema": "API de Games",
+      "conceitos": [
+        "KDA como operação",
+        "agrupamento complexo",
+        "dict de dicts",
+        "taxa/porcentagem"
+      ]
+    },
+    {
+      "id": "funcoes-1",
+      "fase": "funcoes",
+      "numero": 1,
+      "titulo": "Funções de Consulta",
+      "tema": "PokéAPI",
+      "conceitos": [
+        "def / return",
+        "None como retorno",
+        "max() com key",
+        "funções que chamam funções"
+      ]
+    },
+    {
+      "id": "funcoes-2",
+      "fase": "funcoes",
+      "numero": 2,
+      "titulo": "Mini Sistema de Pedidos",
+      "tema": "API de E-commerce",
+      "conceitos": [
+        "funções compostas",
+        "retornar dict",
+        "validação",
+        "formatação de moeda"
+      ]
+    },
+    {
+      "id": "boss-1",
+      "fase": "boss",
+      "numero": 1,
+      "titulo": "Dashboard de Streaming",
+      "tema": "API de Streaming",
+      "conceitos": [
+        "funções compostas",
+        "set para exclusão",
+        "sorted com lambda",
+        "relatório formatado"
+      ]
+    },
+    {
+      "id": "boss-2",
+      "fase": "boss",
+      "numero": 2,
+      "titulo": "API do Campeonato",
+      "tema": "Simulador de Campeonato",
+      "conceitos": [
+        "sistema completo",
+        "atualizar dois registros por iteração",
+        "ordenação multi-critério",
+        "retrospecto"
+      ]
+    }
+  ]
+}
