@@ -8,7 +8,7 @@ Neste encontro, usaremos listas para guardar valores em ordem, acessar posiçõe
 
 | Item | Informação |
 |---|---|
-| Encontro | 5 de 15 |
+| Encontro | 5 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Criação, acesso e alteração de listas |
 | Produto do encontro | Uma coleção editável de produtos e categorias |

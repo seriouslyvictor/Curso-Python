@@ -8,7 +8,7 @@ Neste encontro, vamos ler e gravar texto e usar JSON para preservar uma lista de
 
 | Item | Informação |
 |---|---|
-| Encontro | 10 de 15 |
+| Encontro | 10 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Leitura, gravação e persistência em JSON |
 | Produto do encontro | Um catálogo carregado e salvo em arquivo |

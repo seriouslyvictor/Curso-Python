@@ -8,7 +8,7 @@ Neste encontro, vamos aprofundar a leitura de erros e proteger operações espec
 
 | Item | Informação |
 |---|---|
-| Encontro | 11 de 15 |
+| Encontro | 11 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Exceções específicas, validação e recuperação segura |
 | Produto do encontro | Leitura e gravação robustas de um catálogo JSON |

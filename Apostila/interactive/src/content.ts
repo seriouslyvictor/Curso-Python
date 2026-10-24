@@ -10,6 +10,7 @@ import chapter09Raw from "../../09_modulos_e_organizacao/capitulo.md?raw";
 import chapter10Raw from "../../10_arquivos_e_json/capitulo.md?raw";
 import chapter11Raw from "../../11_excecoes_e_depuracao/capitulo.md?raw";
 import chapter12Raw from "../../12_objetos_estado_comportamento/capitulo.md?raw";
+import chapter13Raw from "../../13_conversando_com_llms/capitulo.md?raw";
 
 export type LessonSection = {
   id: string;
@@ -102,16 +103,17 @@ export const chapters: Chapter[] = [
   parseChapter(10, "Arquivos de texto e JSON", chapter10Raw),
   parseChapter(11, "Validação, exceções e depuração", chapter11Raw),
   parseChapter(12, "Objetos: dados e comportamento", chapter12Raw),
+  parseChapter(13, "Conversando com um modelo de linguagem", chapter13Raw),
 ];
 
 export function getChapter(number: number) {
   return chapters.find((chapter) => chapter.number === number) ?? chapters[0];
 }
 
-// O curso completo tem 15 capítulos (ver Apostila/PLANO_CONTEUDO.md).
+// O curso completo tem 16 capítulos (ver Apostila/PLANO_CONTEUDO.md).
 // Esta versão interativa entrega os capítulos disponíveis abaixo; os demais
 // estão em produção. A interface reflete esse estado de forma intencional.
-export const TOTAL_COURSE_CHAPTERS = 15;
+export const TOTAL_COURSE_CHAPTERS = 16;
 
 const plannedTitles: Record<number, string> = {
   1: "Primeiros passos",
@@ -126,9 +128,10 @@ const plannedTitles: Record<number, string> = {
   10: "Arquivos de texto e JSON",
   11: "Validação, exceções e depuração",
   12: "Objetos: dados e comportamento",
-  13: "Organizando uma aplicação com objetos",
-  14: "Construindo uma interface com Streamlit",
-  15: "Concluir e publicar a aplicação",
+  13: "Conversando com um modelo de linguagem",
+  14: "Organizando uma aplicação com objetos",
+  15: "Construindo uma interface com Streamlit",
+  16: "Concluir e publicar a aplicação",
 };
 
 export type OutlineEntry = {

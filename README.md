@@ -2,7 +2,7 @@
 
 Material didático gratuito para aprender e ensinar os fundamentos da linguagem Python.
 
-Este repositório reúne conteúdos, exemplos e exercícios utilizados em um curso de **Fundamentos em Linguagem Python**, com carga horária de referência de **60 horas**. A proposta é funcionar como uma **apostila interativa**: em vez de apenas ler sobre os conceitos, você pode executar, modificar e experimentar o código durante os estudos.
+Este repositório reúne conteúdos, exemplos e exercícios utilizados em um curso de **Fundamentos em Linguagem Python**, com carga horária de referência de **64 horas**. A proposta é funcionar como uma **apostila interativa**: em vez de apenas ler sobre os conceitos, você pode executar, modificar e experimentar o código durante os estudos.
 
 > [!IMPORTANT]
 > Este material está em desenvolvimento. Algumas aulas, explicações e atividades ainda estão incompletas ou em revisão e podem mudar ao longo do tempo.

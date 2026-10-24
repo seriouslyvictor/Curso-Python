@@ -8,7 +8,7 @@ Dicionários organizam valores por chaves descritivas. Neste encontro, cada prod
 
 | Item | Informação |
 |---|---|
-| Encontro | 8 de 15 |
+| Encontro | 8 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Dicionários, iteração e registros aninhados |
 | Produto do encontro | Um catálogo formado por registros de produtos |

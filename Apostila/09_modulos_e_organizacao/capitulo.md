@@ -8,7 +8,7 @@ Neste encontro, criaremos um arquivo para regras do inventário e outro para a e
 
 | Item | Informação |
 |---|---|
-| Encontro | 9 de 15 |
+| Encontro | 9 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Imports, módulos próprios e ponto de entrada |
 | Produto do encontro | Um programa dividido em arquivos com responsabilidades distintas |

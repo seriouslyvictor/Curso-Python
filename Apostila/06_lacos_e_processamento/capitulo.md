@@ -8,7 +8,7 @@ Neste encontro, usaremos laços para percorrer coleções, repetir cálculos e c
 
 | Item | Informação |
 |---|---|
-| Encontro | 6 de 15 |
+| Encontro | 6 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | `for`, `while`, contadores e acumuladores |
 | Produto do encontro | Um relatório que processa todos os itens do estoque |

@@ -8,7 +8,7 @@ Neste encontro, vamos usar condições para criar caminhos diferentes. O program
 
 | Item | Informação |
 |---|---|
-| Encontro | 4 de 15 |
+| Encontro | 4 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Condicionais, comparações e lógica booleana |
 | Produto do encontro | Um validador de disponibilidade e nível de estoque |

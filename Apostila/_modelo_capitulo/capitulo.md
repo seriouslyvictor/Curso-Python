@@ -8,7 +8,7 @@
 
 | Item | Informação |
 |---|---|
-| Encontro | [XX de 15] |
+| Encontro | [XX de 16] |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | [Tema em uma frase] |
 | Produto do encontro | [O que estará funcionando ao final] |

@@ -8,7 +8,7 @@ Neste encontro, vamos distinguir texto, números e valores lógicos. Depois, apr
 
 | Item | Informação |
 |---|---|
-| Encontro | 3 de 15 |
+| Encontro | 3 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Tipos básicos, conversões e operadores aritméticos |
 | Produto do encontro | Uma calculadora de custo para reposição de estoque |

@@ -8,7 +8,7 @@ Neste encontro, o programa começará a receber informações do usuário. Vamos
 
 | Item | Informação |
 |---|---|
-| Encontro | 2 de 15 |
+| Encontro | 2 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Variáveis, strings, `input()` e `print()` |
 | Produto do encontro | Um cadastro textual de produto executado no terminal |

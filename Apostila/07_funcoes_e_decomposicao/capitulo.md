@@ -8,7 +8,7 @@ Neste encontro, vamos dividir regras de inventário em blocos pequenos, reutiliz
 
 | Item | Informação |
 |---|---|
-| Encontro | 7 de 15 |
+| Encontro | 7 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Definição, parâmetros, retorno e composição de funções |
 | Produto do encontro | Um resumo de produto organizado em funções |

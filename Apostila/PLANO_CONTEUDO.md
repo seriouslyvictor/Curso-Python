@@ -2,7 +2,7 @@
 
 ## 1. Propósito
 
-Esta apostila reorganiza e atualiza os conceitos presentes em `Licoes/` para um curso introdutório de Python com 60 horas agendadas. O material será autocontido, adequado a pessoas que nunca programaram e estruturado em Markdown para permitir reaproveitamento posterior por diferentes ferramentas e LLMs.
+Esta apostila reorganiza e atualiza os conceitos presentes em `Licoes/` para um curso introdutório de Python com 64 horas agendadas. O material será autocontido, adequado a pessoas que nunca programaram e estruturado em Markdown para permitir reaproveitamento posterior por diferentes ferramentas e LLMs.
 
 O curso não será uma introdução genérica a todas as possibilidades de Python. Seu objetivo é construir uma base segura, chegar a uma orientação a objetos simples e natural em Python e concluir com uma aplicação de inventário usando Streamlit.
 
@@ -27,6 +27,7 @@ Ao concluir o curso, o estudante deverá conseguir:
 - investigar erros e tratar falhas previsíveis;
 - modelar entidades simples com classes e objetos;
 - organizar uma aplicação pequena usando composição;
+- integrar um programa a um modelo de linguagem por meio de uma API;
 - criar uma interface web interativa com Streamlit;
 - publicar uma aplicação no Streamlit Community Cloud por meio do GitHub;
 - usar IA em um projeto longo de forma contextualizada, verificável e responsável.
@@ -35,8 +36,8 @@ Ao concluir o curso, o estudante deverá conseguir:
 
 ### Carga horária e encontros
 
-- 60 horas agendadas.
-- 15 encontros de 4 horas.
+- 64 horas agendadas.
+- 16 encontros de 4 horas.
 - Um intervalo de 15 minutos faz parte de cada encontro.
 - Aproximadamente 3 horas e 45 minutos de atividade formativa por encontro.
 - Encontros duplos reúnem dois capítulos completos, sem fundi-los.
@@ -65,7 +66,7 @@ No laboratório institucional, Python e VS Code já estarão instalados. O Capí
 - O texto será amigável, direto e adulto, sem infantilização, memes ou excesso de gírias.
 - Mitologia, jogos e referências de cultura pop não formarão a identidade do curso.
 
-## 3. Estrutura curricular — 15 capítulos
+## 3. Estrutura curricular — 16 capítulos
 
 ### Capítulo 1 — Preparando o ambiente e criando o primeiro programa
 
@@ -318,7 +319,34 @@ No laboratório institucional, Python e VS Code já estarão instalados. O Capí
 
 **Fontes originais:** `Objetos.py` e exemplos finais de `python.py`, com domínio substituído.
 
-### Capítulo 13 — Organizando uma aplicação com objetos
+### Capítulo 13 — Conversando com um modelo de linguagem
+
+**Objetivo:** integrar um programa Python a um modelo de linguagem por meio de uma API, aplicando funções, dicionários, laços e exceções já estudados.
+
+**Conteúdos:**
+
+- o que é um modelo de linguagem e por que suas respostas variam e podem estar erradas;
+- API e chave de API;
+- criação da chave no Google AI Studio;
+- chave guardada em variável de ambiente com `setx`, nunca no código;
+- primeiro ambiente virtual com `.venv` e instalação de `google-genai` com `pip`;
+- cliente, `interactions.create()` e `output_text`;
+- independência entre chamadas e continuação da conversa com `previous_interaction_id`;
+- instrução de sistema e critérios para escrever um bom personagem;
+- dicionário de personagens em módulo separado;
+- laço de conversa com mensagens vazias ignoradas;
+- tratamento de falhas de comunicação e do limite do plano gratuito;
+- uso responsável: personagens não são pessoas reais e respostas podem ser inventadas.
+
+**Prática principal:** construir um chat de terminal em que o usuário escolhe um personagem e conversa com ele.
+
+**Exercício independente:** cada estudante escolhe e escreve, sem IA, as instruções de sistema de pelo menos três personagens e registra testes de permanência no papel.
+
+**Limite didático:** streaming, ferramentas, saída estruturada, imagens e outros recursos da API ficam fora do capítulo. O modelo é usado apenas por meio de texto.
+
+**Referências técnicas:** [primeiros passos](https://ai.google.dev/gemini-api/docs/quickstart), [chaves de API](https://ai.google.dev/gemini-api/docs/api-key) e [Interactions API](https://ai.google.dev/gemini-api/docs/interactions).
+
+### Capítulo 14 — Organizando uma aplicação com objetos
 
 **Objetivo:** usar composição e responsabilidades claras para organizar um programa pequeno.
 
@@ -341,13 +369,13 @@ No laboratório institucional, Python e VS Code já estarão instalados. O Capí
 
 **Fontes originais:** `Objetos.py`, exemplos finais de `python.py` e refatoração dos conceitos anteriores.
 
-### Capítulo 14 — Construindo uma interface com Streamlit
+### Capítulo 15 — Construindo uma interface com Streamlit
 
 **Objetivo:** tornar visíveis e interativas as regras Python já dominadas.
 
 **Conteúdos:**
 
-- criação tardia de ambiente virtual com `.venv`;
+- criação do ambiente virtual `.venv` do projeto, como no Capítulo 13;
 - ativação no terminal integrado;
 - instalação e verificação do Streamlit;
 - execução local de uma aplicação;
@@ -367,7 +395,7 @@ No laboratório institucional, Python e VS Code já estarão instalados. O Capí
 
 **Fontes complementares:** exemplos existentes em `Streamlit/` e [documentação oficial de fundamentos do Streamlit](https://docs.streamlit.io/get-started/fundamentals).
 
-### Capítulo 15 — Concluindo e publicando a aplicação
+### Capítulo 16 — Concluindo e publicando a aplicação
 
 **Objetivo:** integrar, testar, explicar e publicar uma aplicação completa de inventário.
 
@@ -401,7 +429,7 @@ No laboratório institucional, Python e VS Code já estarão instalados. O Capí
 
 **Trabalho em equipe:** duplas são permitidas, mas não obrigatórias. Quando houver dupla, cada integrante deverá demonstrar compreensão individual do código.
 
-**Recuperação:** o capítulo oferecerá um ponto de partida funcional para quem perdeu o Capítulo 14, sem entregar a solução final.
+**Recuperação:** o capítulo oferecerá um ponto de partida funcional para quem perdeu o Capítulo 15, sem entregar a solução final.
 
 **Referências técnicas:** [organização de arquivos](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/file-organization), [dependências](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/app-dependencies) e [implantação no Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy).
 
@@ -487,7 +515,7 @@ Testes automatizados com frameworks ficam fora do núcleo. Casos de teste manuai
 
 ### Durante as aulas e exercícios
 
-O uso de IA será proibido nos capítulos 1 a 13 para:
+O uso de IA será proibido nos capítulos 1 a 14 para:
 
 - prática guiada;
 - exercícios independentes;
@@ -501,7 +529,7 @@ Quando travar sem poder usar IA, o estudante deverá: reler a seção anterior e
 
 ### Durante o projeto longo
 
-O uso de IA será permitido nos capítulos 14 e 15, desde que siga uma prática semelhante à de desenvolvimento real:
+O uso de IA será permitido nos capítulos 15 e 16, desde que siga uma prática semelhante à de desenvolvimento real:
 
 - requisitos, modelo de dados e pseudocódigo são definidos antes da geração de código;
 - o prompt fornece contexto, restrições e o estado atual do projeto;
@@ -546,7 +574,7 @@ O uso de IA será permitido nos capítulos 14 e 15, desde que siga uma prática 
 - padrões de projeto;
 - testes com `pytest`;
 - Pandas e gráficos;
-- APIs externas;
+- APIs externas, exceto a API do Gemini no Capítulo 13;
 - bancos de dados;
 - autenticação;
 - aplicações Streamlit multipágina;
@@ -568,7 +596,7 @@ Type hints são úteis e poderão aparecer em uma leitura opcional, mas não ser
 - Apresentar objetos como estado mais comportamento, não como taxonomia.
 - Preferir composição, métodos pequenos e responsabilidades claras.
 - Separar regras do domínio da interface Streamlit.
-- Introduzir `.venv` apenas quando surgir a necessidade de instalar Streamlit.
+- Introduzir `.venv` apenas quando surgir a primeira biblioteca externa (`google-genai`, no Capítulo 13).
 - Introduzir `main()` depois de funções e o `__name__` guard ao dividir o programa em módulos.
 - Usar repositórios públicos somente com dados fictícios.
 - Proibir senhas, tokens, dados pessoais e dados institucionais no repositório.
@@ -609,7 +637,7 @@ O material em `Licoes/` será fonte conceitual, não texto para cópia literal.
 | `Licoes/test.txt`, `deuses.json`, `thor.json` | Capítulos 10–11 | Estruturas de dados a substituir por inventário |
 | `Licoes/interface.py` | Fora da trilha | Material legado de Turtle |
 | `Licoes/fundamentos_jogo.py` | Fora da trilha | Material legado de jogo e eventos |
-| `Streamlit/*.py` | Capítulos 14–15 | Referência complementar a revisar |
+| `Streamlit/*.py` | Capítulos 15–16 | Referência complementar a revisar |
 
 ## 12. Ordem de produção
 
@@ -619,12 +647,13 @@ O material em `Licoes/` será fonte conceitual, não texto para cópia literal.
 4. Produzir os capítulos 2 a 4.
 5. Produzir os capítulos 5 a 7 e revisar a progressão até funções.
 6. Produzir os capítulos 8 a 11 e validar persistência e tratamento de erros.
-7. Produzir os capítulos 12 e 13 e testar a abordagem de OOP com iniciantes.
-8. Produzir o Capítulo 14 e testar instalação, `.venv`, reruns e Session State.
-9. Produzir o Capítulo 15 e testar o fluxo completo de GitHub e Community Cloud.
-10. Produzir e separar todas as soluções.
-11. Fazer revisão técnica, didática, linguística e de acessibilidade.
-12. Verificar novamente versões, links e capturas de tela antes da publicação.
+7. Produzir os capítulos 12 e 14 e testar a abordagem de OOP com iniciantes.
+8. Produzir o Capítulo 13 e testar chave de API, `.venv`, `pip` e a conversa com o Gemini.
+9. Produzir o Capítulo 15 e testar reruns e Session State.
+10. Produzir o Capítulo 16 e testar o fluxo completo de GitHub e Community Cloud.
+11. Produzir e separar todas as soluções.
+12. Fazer revisão técnica, didática, linguística e de acessibilidade.
+13. Verificar novamente versões, links e capturas de tela antes da publicação.
 
 ## 13. Critério de conclusão por capítulo
 

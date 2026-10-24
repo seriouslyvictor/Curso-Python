@@ -114,6 +114,18 @@
         "produto_base.py",
         "self_incorreto.py"
       ]
+    },
+    {
+      "chapterNumber": 13,
+      "chapterFolder": "13_conversando_com_llms",
+      "zipFilename": "capitulo-13-starter.zip",
+      "includedFiles": [
+        "chat.py",
+        "memoria.py",
+        "memoria_quebrada.py",
+        "personagens.py",
+        "teste_conexao.py"
+      ]
     }
   ]
 }

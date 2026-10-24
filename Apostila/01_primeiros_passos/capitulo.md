@@ -8,7 +8,7 @@ Neste encontro, vamos preparar esse caminho com calma. Ao final, você terá uma
 
 | Item | Informação |
 |---|---|
-| Encontro | 1 de 15 |
+| Encontro | 1 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Preparação do ambiente e primeira execução |
 | Produto do encontro | Um programa Python criado, salvo, executado e corrigido |

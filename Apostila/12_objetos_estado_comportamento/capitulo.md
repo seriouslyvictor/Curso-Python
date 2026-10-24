@@ -8,7 +8,7 @@ Objetos permitem agrupar o estado de um produto e os comportamentos que operam s
 
 | Item | Informação |
 |---|---|
-| Encontro | 12 de 15 |
+| Encontro | 12 de 16 |
 | Duração agendada | 4 horas, incluindo intervalo |
 | Tema central | Classes, instâncias, atributos e métodos |
 | Produto do encontro | Uma classe `Produto` com estado e operações próprias |
@@ -422,4 +422,4 @@ Conclua quando as duas categorias forem exibidas com nomes diferentes e uma tent
 
 - [Classes — tutorial oficial do Python](https://docs.python.org/3/tutorial/classes.html)
 
-No próximo capítulo, uma classe `Inventario` passará a coordenar vários objetos `Produto` por composição.
+No próximo capítulo, seus programas passarão a conversar com um modelo de linguagem pela internet. Os objetos voltam no Capítulo 14, quando uma classe `Inventario` passará a coordenar vários objetos `Produto` por composição.
