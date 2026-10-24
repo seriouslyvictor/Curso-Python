@@ -14,5 +14,14 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Use the selected "Guided Chapter Rail" mock as the structural source of truth.
 - Build every canonical chapter currently available (1–12) and keep each
   chapter's existing Markdown file as the content source of truth.
-- Use the Pinterest-derived warm neutral/red system only as temporary scaffolding; keep visual values behind CSS custom properties so official SENAI tokens can replace them later.
+- The UI is built from shadcn/ui (Base UI primitives, preset `b3K65bHFJA`:
+  zinc/sky, Roboto + JetBrains Mono, Phosphor icons) plus ReactBits
+  components for motion (`Counter`, `SpringCheck`, `SpotlightCard`,
+  `AnimatedContent`, `ClickSpark`). Theme values live as CSS variables in
+  `src/globals.css`, so official SENAI tokens can still replace them later.
+  Lesson Markdown typography lives in `src/lesson.css`.
+- Keep font ligatures off: JetBrains Mono would render `==` and `>=` as
+  single glyphs, which misleads students learning Python operators.
+- ReactBits Pro blocks are standalone demo pages (hard-coded neutrals,
+  Hugeicons); use them as layout references, not drop-in components.
 - Use a client-only React + TypeScript + Vite architecture. Store progress locally for this validation pass; do not add accounts, a backend, a database, or an embedded Python runtime.

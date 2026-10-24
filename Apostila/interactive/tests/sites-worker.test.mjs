@@ -66,3 +66,34 @@ test("emits the files required by Sites packaging", async () => {
   await access(new URL("../dist/server/index.js", import.meta.url));
   await access(new URL("../dist/.openai/hosting.json", import.meta.url));
 });
+
+test("serves seekable video ranges even when the asset server ignores Range", async () => {
+  const response = await worker.fetch(new Request("https://example.test/media/lesson.mp4", {
+    headers: { range: "bytes=2-5" },
+  }), { ASSETS: { fetch: async request => {
+    assert.equal(new URL(request.url).pathname, "/assets/lesson.mp4");
+    return new Response("0123456789", { headers: { "content-type": "video/mp4" } });
+  } } });
+  assert.equal(response.status, 206);
+  assert.equal(response.headers.get("content-range"), "bytes 2-5/10");
+  assert.equal(response.headers.get("accept-ranges"), "bytes");
+  assert.equal(await response.text(), "2345");
+});
+
+test("supports open and suffix ranges, rejects unsatisfiable ranges, and preserves HEAD", async () => {
+  for (const [range, status, expected] of [["bytes=7-", 206, "789"], ["bytes=-3", 206, "789"], ["bytes=12-", 416, ""], ["bytes=5-2", 416, ""]]) {
+    const response = await worker.fetch(new Request("https://example.test/media/lesson.mp4", { headers: { range } }), {
+      ASSETS: { fetch: async () => new Response("0123456789", { headers: { "content-type": "video/mp4" } }) },
+    });
+    assert.equal(response.status, status);
+    assert.equal(await response.text(), expected);
+  }
+  const response = await worker.fetch(new Request("https://example.test/media/lesson.mp4", { method: "HEAD" }), {
+    ASSETS: { fetch: async request => {
+      assert.equal(request.method, "HEAD");
+      return new Response(null, { headers: { "content-length": "10" } });
+    } },
+  });
+  assert.equal(response.headers.get("accept-ranges"), "bytes");
+  assert.equal(await response.text(), "");
+});
