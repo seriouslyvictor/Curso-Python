@@ -25,3 +25,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - ReactBits Pro blocks are standalone demo pages (hard-coded neutrals,
   Hugeicons); use them as layout references, not drop-in components.
 - Use a client-only React + TypeScript + Vite architecture. Store progress locally for this validation pass; do not add accounts, a backend, a database, or an embedded Python runtime.
+- After `shadcn add` or installing a package while the dev server runs,
+  restart it with `pnpm dev:fresh` and hard-reload open tabs (Ctrl+Shift+R).
+  Otherwise Vite re-bundles dependencies mid-session and open pages can mix
+  two copies of React ("Invalid hook call").

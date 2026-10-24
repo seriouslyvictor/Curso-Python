@@ -170,10 +170,10 @@ export function AppShell({
         {sidebar}
       </Sidebar>
 
-      <SidebarInset>
+      <SidebarInset className="min-w-0">
         <header className="sticky top-0 z-10 flex h-14 shrink-0 items-center gap-2 border-b bg-background/90 px-4 backdrop-blur">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-1 data-[orientation=vertical]:h-4" />
+          <Separator orientation="vertical" className="mr-1 self-center data-[orientation=vertical]:h-4" />
           <div className="min-w-0 flex-1">{breadcrumb}</div>
           <Button
             variant="outline"

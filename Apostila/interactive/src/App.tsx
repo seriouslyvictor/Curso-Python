@@ -3,6 +3,7 @@ import {
   ArrowRight,
   BookOpenText,
   Bug,
+  CaretDown,
   CaretRight,
   CheckCircle,
   Circle,
@@ -18,6 +19,7 @@ import AnimatedContent from "@/components/AnimatedContent";
 import ClickSpark from "@/components/ClickSpark";
 import SpringCheck from "@/components/SpringCheck";
 import { AppShell } from "@/components/course/AppShell";
+import { ChapterMapDialog, resumeSectionId } from "@/components/course/ChapterMap";
 import { ChapterSidebar } from "@/components/course/ChapterSidebar";
 import { LessonMarkdown } from "@/components/course/LessonMarkdown";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -296,6 +298,7 @@ function ChaptersApp() {
   const { route, navigate } = useCourseRoute();
   const [progress, setProgress] = useState<CourseProgress>(() => readProgress());
   const [starterPackage, setStarterPackage] = useState<StarterPackage | null>(null);
+  const [mapOpen, setMapOpen] = useState(false);
   const chapter = getChapter(route.chapterNumber);
   const currentIndex = Math.max(
     0,
@@ -380,6 +383,10 @@ function ChaptersApp() {
     if (next) navigate(next.chapterNumber, next.section.id);
   }
 
+  function goToChapter(chapterNumber: number) {
+    navigate(chapterNumber, resumeSectionId(chapterNumber, progress.completedSections));
+  }
+
   const showReflection = currentSection.title
     .toLowerCase()
     .includes("verifique seu aprendizado");
@@ -393,15 +400,20 @@ function ChaptersApp() {
           sectionId={currentSection.id}
           completedSections={progress.completedSections}
           onNavigate={navigate}
+          onOpenMap={() => setMapOpen(true)}
         />
       }
       breadcrumb={
         <Breadcrumb>
           <BreadcrumbList className="flex-nowrap">
-            <BreadcrumbItem className="hidden md:inline-flex">
-              Capítulo {chapter.number} de {TOTAL_COURSE_CHAPTERS}
+            <BreadcrumbItem>
+              <Button variant="secondary" size="sm" onClick={() => setMapOpen(true)}>
+                Capítulo {chapter.number} de {TOTAL_COURSE_CHAPTERS}
+                <span className="sr-only">: abrir mapa do curso</span>
+                <CaretDown data-icon="inline-end" />
+              </Button>
             </BreadcrumbItem>
-            <BreadcrumbSeparator className="hidden md:block" />
+            <BreadcrumbSeparator />
             <BreadcrumbItem className="hidden sm:inline-flex">{chapter.shortTitle}</BreadcrumbItem>
             <BreadcrumbSeparator className="hidden sm:block" />
             <BreadcrumbItem className="min-w-0">
@@ -513,6 +525,14 @@ function ChaptersApp() {
           ) : null}
         </footer>
       </article>
+
+      <ChapterMapDialog
+        open={mapOpen}
+        onOpenChange={setMapOpen}
+        currentChapter={chapter.number}
+        completedSections={progress.completedSections}
+        onSelect={goToChapter}
+      />
     </AppShell>
   );
 }

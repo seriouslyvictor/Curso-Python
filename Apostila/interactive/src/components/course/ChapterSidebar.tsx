@@ -1,21 +1,11 @@
 import { CaretRight, CheckCircle, Circle, CloudCheck } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
-import Counter from "@/components/Counter";
-import { Badge } from "@/components/ui/badge";
+import { ChapterMapTrigger, chapterSummaries } from "@/components/course/ChapterMap";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Progress } from "@/components/ui/progress";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import {
   SidebarContent,
   SidebarFooter,
@@ -27,12 +17,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import {
-  courseOutline,
-  getChapter,
-  lastAvailableChapter,
-  TOTAL_COURSE_CHAPTERS,
-} from "@/content";
+import { getChapter, lastAvailableChapter } from "@/content";
 import { chapterStages, sectionKey, type ChapterStage } from "@/lib/course";
 
 function StageGroup({
@@ -115,85 +100,34 @@ export function ChapterSidebar({
   sectionId,
   completedSections,
   onNavigate,
+  onOpenMap,
 }: {
   chapterNumber: number;
   sectionId: string;
   completedSections: string[];
   onNavigate: (chapterNumber: number, sectionId: string) => void;
+  onOpenMap: () => void;
 }) {
   const { setOpenMobile } = useSidebar();
   const chapter = getChapter(chapterNumber);
-  const chapterCompleted = chapter.sections.filter((section) =>
-    completedSections.includes(sectionKey(chapter.number, section.id)),
-  ).length;
-  const percentage = Math.round((chapterCompleted / chapter.sections.length) * 100);
-  const chapterItems = courseOutline.map((item) => ({
-    value: String(item.number),
-    label: `${item.number}. ${item.shortTitle}`,
-  }));
+  const summary = chapterSummaries(completedSections)[chapterNumber - 1];
 
-  function select(nextChapter: number, nextSection: string) {
-    onNavigate(nextChapter, nextSection);
+  function select(nextSection: string) {
+    onNavigate(chapter.number, nextSection);
     setOpenMobile(false);
   }
 
   return (
     <>
       <SidebarContent>
-        <SidebarGroup className="gap-3">
-          <Select
-            items={chapterItems}
-            value={String(chapter.number)}
-            onValueChange={(value) => {
-              const next = getChapter(Number(value));
-              select(next.number, next.sections[0].id);
+        <SidebarGroup>
+          <ChapterMapTrigger
+            summary={summary}
+            onOpen={() => {
+              setOpenMobile(false);
+              onOpenMap();
             }}
-          >
-            <SelectTrigger className="w-full" aria-label="Trocar de capítulo">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                {courseOutline.map((item) => (
-                  <SelectItem
-                    key={item.number}
-                    value={String(item.number)}
-                    disabled={!item.available}
-                  >
-                    {item.number}. {item.shortTitle}
-                    {item.available ? null : (
-                      <Badge variant="outline" className="ml-auto">
-                        Em produção
-                      </Badge>
-                    )}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-
-          <div className="flex flex-col gap-2 rounded-xl border bg-background p-3">
-            <span className="text-xs text-muted-foreground">
-              Capítulo {chapter.number} de {TOTAL_COURSE_CHAPTERS}
-            </span>
-            <span className="font-heading text-base leading-tight font-semibold">
-              {chapter.shortTitle}
-            </span>
-            <Progress value={percentage} aria-label={`Progresso do capítulo ${chapter.number}`} />
-            <div className="flex items-center justify-between text-xs text-muted-foreground">
-              <span>
-                {chapterCompleted} de {chapter.sections.length} seções
-              </span>
-              <Counter
-                value={percentage}
-                suffix="%"
-                fontSize={12}
-                fontWeight={600}
-                intro={false}
-                className="text-foreground"
-              />
-            </div>
-          </div>
+          />
         </SidebarGroup>
 
         <nav aria-label="Seções do capítulo">
@@ -205,7 +139,7 @@ export function ChapterSidebar({
               sectionId={sectionId}
               completedSections={completedSections}
               sectionIndex={(id) => chapter.sections.findIndex((item) => item.id === id)}
-              onSelect={(id) => select(chapter.number, id)}
+              onSelect={select}
             />
           ))}
         </nav>
