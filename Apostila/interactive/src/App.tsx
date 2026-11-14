@@ -52,6 +52,7 @@ import { Kbd, KbdGroup } from "@/components/ui/kbd";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Practices } from "@/Practices";
+import { Projects } from "@/Projects";
 import {
   chapters,
   getChapter,
@@ -547,7 +548,13 @@ export function App() {
 
   return (
     <TooltipProvider>
-      {/^#\/praticas(?:\/|$)/.test(hash) ? <Practices hash={hash} /> : <ChaptersApp />}
+      {/^#\/projetos(?:\/|$)/.test(hash) ? (
+        <Projects hash={hash} />
+      ) : /^#\/praticas(?:\/|$)/.test(hash) ? (
+        <Practices hash={hash} />
+      ) : (
+        <ChaptersApp />
+      )}
       <Toaster position="bottom-center" richColors />
     </TooltipProvider>
   );

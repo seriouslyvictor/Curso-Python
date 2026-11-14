@@ -1,0 +1,72 @@
+{
+  "etapas": [
+    { "id": "investigar", "label": "Investigar", "desc": "Entender o problema com quem vive a rotina." },
+    { "id": "planejar", "label": "Planejar", "desc": "Decidir dados, telas, regras e tecnologias." },
+    { "id": "construir", "label": "Construir", "desc": "Implementar o fluxo principal com dados fictícios." },
+    { "id": "publicar", "label": "Publicar", "desc": "Colocar a aplicação no ar e documentar." },
+    { "id": "apresentar", "label": "Apresentar", "desc": "Validar com a instituição e mostrar o resultado." }
+  ],
+  "projetos": [
+    {
+      "id": "achados-e-perdidos",
+      "titulo": "Achados e perdidos",
+      "resumo": "Registrar objetos encontrados, localizá-los rapidamente e controlar a devolução para a pessoa certa.",
+      "pessoas": ["Equipe da recepção", "Quem perdeu um objeto"],
+      "checklist": [
+        "Cadastrar um objeto encontrado com local de guarda",
+        "Buscar e filtrar objetos registrados",
+        "Corrigir um registro",
+        "Registrar a devolução e bloquear devolução duplicada",
+        "Separar guardados de devolvidos e consultar o histórico",
+        "Dados continuam lá depois de reiniciar a aplicação",
+        "Mensagens claras para sucesso, erro e busca sem resultado",
+        "Aplicação publicada no PythonAnywhere",
+        "Mapa do sistema preenchido"
+      ]
+    },
+    {
+      "id": "biblioteca",
+      "titulo": "Sistema da biblioteca",
+      "resumo": "Organizar o acervo, controlar exemplares disponíveis e acompanhar empréstimos, devoluções e atrasos.",
+      "pessoas": ["Responsáveis pela biblioteca", "Leitores"],
+      "checklist": [
+        "Cadastrar e buscar livros e leitores",
+        "Mostrar exemplares e disponibilidade de cada livro",
+        "Registrar empréstimo com prazo de devolução",
+        "Bloquear empréstimo sem exemplar disponível",
+        "Registrar devolução e bloquear devolução duplicada",
+        "Listar empréstimos em aberto e atrasados",
+        "Dados continuam lá depois de reiniciar a aplicação",
+        "Mensagens claras para sucesso, erro e busca sem resultado",
+        "Aplicação publicada no PythonAnywhere",
+        "Mapa do sistema preenchido"
+      ]
+    },
+    {
+      "id": "calendario-de-eventos",
+      "titulo": "Calendário de eventos",
+      "resumo": "Divulgar a programação do Instituto e permitir que os responsáveis a mantenham sempre atualizada.",
+      "pessoas": ["Organizadores", "Comunidade do Instituto"],
+      "checklist": [
+        "Cadastrar um evento com os dados levantados",
+        "Listar próximos eventos por data e abrir detalhes",
+        "Buscar ou filtrar pelos critérios combinados",
+        "Editar um evento",
+        "Cancelar um evento e deixar o cancelamento visível",
+        "Separar eventos futuros dos encerrados",
+        "Dados continuam lá depois de reiniciar a aplicação",
+        "Mensagens claras para sucesso, erro e busca sem resultado",
+        "Aplicação publicada no PythonAnywhere",
+        "Mapa do sistema preenchido"
+      ]
+    }
+  ],
+  "guias": [
+    { "id": "entrevista", "titulo": "Como conduzir a entrevista", "resumo": "Reunião ao vivo ou perguntas por escrito? Como preparar, conduzir e registrar.", "etapa": "investigar" },
+    { "id": "perguntas", "titulo": "Perguntas para descobrir requisitos", "resumo": "Um banco de perguntas que revelam regras, exceções e prioridades.", "etapa": "investigar" },
+    { "id": "stack", "titulo": "Stack recomendada", "resumo": "Flask + SQLite: por que, como organizar o projeto e quando considerar Django.", "etapa": "planejar" },
+    { "id": "ferramentas-ia", "titulo": "Ferramentas de IA para programar", "resumo": "Antigravity, Cursor, OpenCode, Claude Code e Codex CLI, e como usá-las sem perder o controle.", "etapa": "construir" },
+    { "id": "deploy", "titulo": "Publicar no PythonAnywhere", "resumo": "Passo a passo para colocar a aplicação Flask no ar e os erros mais comuns.", "etapa": "publicar" },
+    { "id": "mapa-do-sistema", "titulo": "Mapa do sistema", "resumo": "O entregável que prova que a equipe entende o que construiu: rotas, dados, acesso e deploy.", "etapa": "apresentar" }
+  ]
+}

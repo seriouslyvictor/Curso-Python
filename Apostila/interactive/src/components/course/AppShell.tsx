@@ -1,6 +1,7 @@
-import { BookOpenText, Barbell, MagnifyingGlass } from "@phosphor-icons/react";
+import { BookOpenText, Barbell, MagnifyingGlass, RocketLaunch } from "@phosphor-icons/react";
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import catalog from "../../../../praticas/catalogo.json";
+import projectCatalog from "../../../../projetos/catalogo.json";
 import { chapters } from "@/content";
 import { chaptersPath, pathFor } from "@/lib/course";
 import { Button } from "@/components/ui/button";
@@ -24,7 +25,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export type CourseArea = "capitulos" | "praticas";
+export type CourseArea = "capitulos" | "praticas" | "projetos";
 
 // Accent-insensitive substring match, so "funcao" finds "função".
 function normalize(value: string) {
@@ -52,12 +53,35 @@ function SearchCommand({
       open={open}
       onOpenChange={onOpenChange}
       title="Buscar na apostila"
-      description="Encontre uma seção de capítulo ou uma prática."
+      description="Encontre uma seção de capítulo, uma prática ou um projeto."
     >
       <Command filter={searchFilter}>
-        <CommandInput placeholder="Buscar seção ou prática…" />
+        <CommandInput placeholder="Buscar seção, prática ou projeto…" />
         <CommandList>
           <CommandEmpty>Nada encontrado com esse termo.</CommandEmpty>
+          <CommandGroup heading="Projetos">
+            {projectCatalog.projetos.map((project) => (
+              <CommandItem
+                key={project.id}
+                value={`projeto desafio ${project.titulo} ${project.resumo}`}
+                onSelect={() => go(`#/projetos/${project.id}`)}
+              >
+                <RocketLaunch />
+                <span>{project.titulo}</span>
+              </CommandItem>
+            ))}
+            {projectCatalog.guias.map((guide) => (
+              <CommandItem
+                key={guide.id}
+                value={`guia projeto ${guide.titulo} ${guide.resumo}`}
+                onSelect={() => go(`#/projetos/guia/${guide.id}`)}
+              >
+                <RocketLaunch />
+                <span className="truncate">{guide.titulo}</span>
+                <span className="ml-auto text-xs text-muted-foreground">Guia</span>
+              </CommandItem>
+            ))}
+          </CommandGroup>
           <CommandGroup heading="Práticas">
             {catalog.challenges.map((challenge) => (
               <CommandItem
@@ -151,7 +175,7 @@ export function AppShell({
           <Tabs
             value={area}
             onValueChange={(value) => {
-              const target = value === "praticas" ? "#/praticas" : chaptersPath();
+              const target = value === "praticas" ? "#/praticas" : value === "projetos" ? "#/projetos" : chaptersPath();
               window.location.hash = target.slice(1);
             }}
           >
@@ -163,6 +187,10 @@ export function AppShell({
               <TabsTrigger value="praticas">
                 <Barbell />
                 Práticas
+              </TabsTrigger>
+              <TabsTrigger value="projetos">
+                <RocketLaunch />
+                Projetos
               </TabsTrigger>
             </TabsList>
           </Tabs>
